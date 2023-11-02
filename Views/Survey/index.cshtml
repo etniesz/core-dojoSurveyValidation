@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Dojo Survey Validation";
+}
+
+@model Survey
+<div class="text-center">
+    <form asp-action="Survey" asp-controller="Survey" method="post">
+        <fieldset>
+            <div>
+                <label asp-for="Name">Your name</label>
+                <input asp-for="Name" id="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Location">Dojo Location</label>
+                <select asp-for="Location" id="Location">
+                    <option value="santiago">Santiago</option>
+                    <option value="talca">Talca</option>
+                    <option value="valparaiso">Valparaíso</option>
+                    <option value="arica">Arica</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="Language">Favorite Language</label>
+                <select asp-for="Language" id="Language">
+                    <option value="python">Python</option>
+                    <option value="csharp">C#</option>
+                    <option value="java">Java</option>
+                    <option value="ruby">Ruby</option>
+                </select>
+            </div>
+            <div>
+                <label asp-for="Comment">Comment (optional)</label>
+                <textarea asp-for="Comment" id="Comment" cols="30" rows="10"></textarea>
+                <span asp-validation-for="Comment"></span>
+            </div>
+            <button asp-for="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
